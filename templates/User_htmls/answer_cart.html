@@ -1,0 +1,41 @@
+
+
+<table class="table" style="margin-top:30px" >
+
+                    <thead >
+
+
+                    <tr>
+
+                        <th class="col-xs-1 ">
+
+                            <div class="h1 voting" style="color:#39435c" id="{{item.2}}">{{voting}}</div>
+                        </th>
+
+                        <th class="col-xs-1 AnswerId" id="th{{answer_id}}"> <!--this for href link just-->
+                            <a href="#th{{answer_id}}" id="{{answer_id}}" class="UpVote" title="I like it"><i class="fa fa-chevron-up fa-2x " style="color:#39435c" ></i></a>
+                            <br><br>
+
+                            <a href="#th{{answer_id}}" id="{{answer_id2}}" class="DownVote" title="I don't like it"><i class="fa fa-chevron-down fa-2x " style="color:#39435c" ></i></a>
+                        </th>
+                        <th class="col-xs-8 ">
+                            <div  class="h2" style="color:#39435c;">
+                               {{answer|safe}}
+                            </div>
+                        </th>
+
+
+                        <th class="col-xs-1 ">
+                            <div  class="h2" style="color:white;">
+                         <blockquote class="h2"><small  style="color:white">{{answer_by}}</small></blockquote>
+
+                            </div>
+                        </th>
+
+                    </tr>
+
+
+                    </thead>
+                </table>
+
+

@@ -1,0 +1,49 @@
+<!-- Start Feature Section -->
+{% load staticfiles %}
+
+<head>
+
+    <title> Alzitoona | Ask </title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <style>
+        body{background-color:#39435c;}
+        #main{background-color:white;}
+
+
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xs-8 col-xs-offset-2" id="main" style="margin-bottom:20px">
+
+
+            <div class="panel-info">
+                <div class="panel-heading h3">
+                    Thank you {{username}}
+                </div>
+                <div class="panel-body h2">
+
+                    You can see your question in <a href="/home/questions/All/">Questions Section.</a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+
+</body>
+<!-- End Feature Section -->

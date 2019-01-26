@@ -1,0 +1,43 @@
+{% load staticfiles %}
+
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Who you are</title>
+        <link href="{% static 'css/one.css'%}" rel="stylesheet">
+        <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <style>
+
+          body{background-color:#39435c;}
+
+    </style>
+
+
+    </head>
+    <body >
+
+
+    <div class="container" >
+
+        <div class="row">
+        <div class="col-md-6" style="margin-top:200px">
+            <a href="/student/" class="btn btn-default btn-block general-button"> <img src="{% static 'media/student.png'%}"><span class="h2">Student</span></a>
+
+        </div>
+
+            <div class="col-md-6" style="margin-top:200px">
+                <a href="/professor/" class="btn btn-default btn-block general-button "> <img src="{% static 'media/professor.png'%}"><span class="h2">professor</span></a>
+
+            </div>
+
+      </div>
+      </div>
+
+
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"> </script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+
+    </body>

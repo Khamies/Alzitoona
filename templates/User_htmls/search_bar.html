@@ -1,0 +1,96 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>
+        Alzaitoona | Question
+    </title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/loading.css'%}" rel="stylesheet">
+    <link href="{% static 'css/loading_spinner.css'%}" rel="stylesheet">
+
+    <style type="text/css">
+        td,th {
+        text-align:center ;
+        }
+        body{background-color:#39435c}
+        #alzitoona-table{background-color:white}
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-xs-10 col-xs-offset-1"  style="margin-top:200px;background-color:#39435c">
+
+
+            <div class="input-group col-xs-8 col-xs-offset-2" style="margin-bottom:50px;margin-top:50px;">
+                <input type="search" class="form-control" id="search_input" style="height:60px" placeholder="Make a search ...">
+                <input type="hidden" id="token" value="{{ csrf_token }}" name="csrfmiddlewaretoken">
+
+                <span class="input-group-btn">
+                <button class="btn btn-info " type="button" id="search"
+                        style="font-size:15px;height:60px;"><strong class="h4">Search</strong></button>
+               </span>
+
+                 <span class="input-group-btn">
+                <button class="btn btn-default" type="button" id="search2" style="font-size:15px;height:60px">Search</button>
+               </span>
+                </div>
+
+                 <div class="sk-folding-cube" id="loading-icon" >
+                 <div class="sk-cube1 sk-cube"></div>
+                 <div class="sk-cube2 sk-cube"></div>
+                 <div class="sk-cube4 sk-cube"></div>
+                 <div class="sk-cube3 sk-cube"></div>
+             </div>
+
+                <div class="col-xs-10 col-xs-offset-1" id="table">
+
+
+                </div>
+
+
+
+
+        </div>
+
+
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/questions_search.js'%}"></script>
+<script>
+$(document).ready(function(){
+    $("#search2").hide();
+    $("#search").click(function(){
+    $("#search_input").animate(
+    {bottom:"230px"},2200
+    );
+    $("#search2").animate(
+    {bottom:"230px"},2200
+    );
+
+    $("#search2").show();
+    $("#search").hide();
+    });
+
+    });
+
+</script>
+
+</body>
+</html>

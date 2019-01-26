@@ -1,0 +1,28 @@
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/home/"><i class="fa fa-home fa-2x">&nbsp;&nbsp;<strong class="h3">AL
+                Zitoona</strong></i></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <!--<ul class="nav navbar-nav">-->
+                <!---->
+            <!--</ul>-->
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-user fa-2x"></i>&nbsp;<strong class="h3">{{request.user}}</strong><span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="/home/profile/" class="panel"><strong>Profile</strong></a></li>
+                        <li><a href="/logout/" class="panel"><strong>logout</strong></a></li>
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,207 @@
+{% load staticfiles %}
+
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Al Zitoona </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+
+    <!-- Font Awesome CSS -->
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/animate.css'%}" rel="stylesheet">
+
+
+    <!-- Custom CSS -->
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+
+    <!--Custom CSS -->
+
+    <link href="{% static 'css/app.css'%}" rel="stylesheet">
+
+
+    <!-- Template js -->
+    <script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+    <script src="{% static 'js/bootstrap.min.js'%}"></script>
+    <script src="{% static 'js/jquery.appear.js'%}"></script>
+    <script src="{% static 'js/contact_me.js'%}"></script>
+    <script src="{% static 'js/jqBootstrapValidation.js'%}"></script>
+    <script src="{% static 'js/modernizr.custom.js'%}"></script>
+    <script src="{% static 'js/script.js'%}"></script>
+
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<!-- Start Logo Section -->
+<section id="logo-section" class="text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="logo text-center h3">
+
+                    <a>
+                        <i class="fa fa-home fa-3x"></i>
+                        <p><strong class="h2">{{user}}</strong></p>
+
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Logo Section -->
+
+
+<!-- Start Main Body Section -->
+<div class="mainbody-section text-center">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-3">
+
+                <div class="menu-item blue">
+                    <a href="ask/">
+                        <i class="fa fa-question "></i>
+                        <p><strong class="h2">Ask</strong></p>
+                    </a>
+                </div>
+
+                <div class="menu-item green">
+                    <a href="questions/">
+                        <i class="fa fa-list"></i>
+                        <p><strong class="h2">Questions</strong></p>
+                    </a>
+                </div>
+
+                <div class="menu-item light-red">
+                    <a href="library/">
+                        <i class="fa fa-book "></i>
+                        <p><strong class="h2">Library</strong></p>
+                    </a>
+                </div>
+
+            </div>
+
+            <div class="col-md-6">
+
+                <!--&lt;!&ndash; Start Carousel Section &ndash;&gt;-->
+                <!--<div class="home-slider">-->
+                <!--<div id="carousel-example-generic" class="carousel slide" data-ride="carousel" style="padding-bottom: 30px;">-->
+                <!--&lt;!&ndash; Indicators &ndash;&gt;-->
+                <!--<ol class="carousel-indicators">-->
+                <!--<li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>-->
+                <!--<li data-target="#carousel-example-generic" data-slide-to="1"></li>-->
+                <!--<li data-target="#carousel-example-generic" data-slide-to="2"></li>-->
+                <!--</ol>-->
+
+                <!--&lt;!&ndash; Wrapper for slides &ndash;&gt;-->
+                <!--<div class="carousel-inner">-->
+                <!--<div class="item active">-->
+                <!--<img src="images/about-03.jpg" class="img-responsive" alt="">-->
+                <!--</div>-->
+                <!--<div class="item">-->
+                <!--<img src="images/about-02.jpg" class="img-responsive" alt="">-->
+                <!--</div>-->
+                <!--<div class="item">-->
+                <!--<img src="images/about-01.jpg" class="img-responsive" alt="">-->
+                <!--</div>-->
+
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; Start Carousel Section &ndash;&gt;-->
+
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="menu-item color responsive">
+                            <a href="activity/">
+                                <i class="fa fa-bar-chart"></i>
+                                <p><strong class="h2">Activity</strong></p>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="menu-item light-orange responsive-2">
+                            <a href="rating_professors/">
+                                <i class="fa fa-star"></i>
+                                <p><strong class="h2">Rating Professors</strong></p>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col-md-3">
+
+                <div class="menu-item light-red">
+                    <a href="profile/">
+                        <i class="fa fa-user "></i>
+                        <p><strong class="h2">Profile</strong></p>
+                    </a>
+                </div>
+
+                <div class="menu-item color">
+                    <a href="general_library/">
+                        <i class="fa  fa-university "></i>
+                        <p><strong class="h2">General Library</strong></p>
+                    </a>
+                </div>
+
+                <!--<div class="menu-item blue">-->
+                    <!--<a href="chat/">-->
+                        <!--<i class="fa fa-comment"></i>-->
+                        <!--<p><strong class="h2">Chat</strong></p>-->
+
+                    <!--</a>-->
+                <!--</div>-->
+
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Main Body Section -->
+
+<!-- Start Copyright Section -->
+<div class=" text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <a href="/logout/">
+                    <i class="fa fa-sign-out fa-3x"></i>
+                    <p><strong class="h3">Sign out</strong></p>
+
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Copyright Section -->
+
+
+</body>
+
+</html>

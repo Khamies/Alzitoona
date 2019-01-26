@@ -1,0 +1,61 @@
+
+
+
+            <div class="table-responsive" id="normal-table" style="margin-top:50px;background-color:white">
+
+
+                <table class="table table-hover" style="margin-top:30px">
+                    <thead>
+                    <tr>
+                        <th><span class="h4">UpVotes</span></th>
+                        <th><span class="h4">DownVotes</span></th>
+                        <th><span class="h4">Question</span></th>
+                        <th><span class="h4">Specialization</span></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for info in page.object_list %}
+
+                    <tr>
+                        <td style="background-color:#ECEBEB ;height:100px"><span class="h2 ">{{info.upvote}}</span><br/>votes
+                        </td>
+                        <td style="background-color:#ECEBEB; height:100px"><span class="h2 ">{{info.downvote}}</span>
+                            <br/>votes
+                        </td>
+                        <td><a class="h4" style="height:100px" href="{{info.question_id}}/">{{info.question_title}}</a></td>
+                        <td><span class="h4 text-info" style="height:100px" >{{info.specialization}}</span></td>
+
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+
+                <div align="center">
+                    <ul class="pagination pagination-centered">
+
+
+                        {% if page.has_previous %}
+                        <li><a href="{{previous}}{{page.previous_page_number }}">&laquo;</a></li>
+
+                        {% endif %}
+
+                        <li class="active"><a href="?page={{ page.number }}">{{page.number}}</a></li>
+
+
+                        {% if page.has_next %}
+                        <li><a href="{{next}}{{ page.next_page_number }}">&raquo;</a></li>
+
+                        {% endif %}
+
+
+                    </ul>
+                </div>
+
+
+            </div>
+
+
+

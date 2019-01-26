@@ -1,0 +1,125 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>
+        Alzaitoona | Question
+    </title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/loading.css'%}" rel="stylesheet">
+    <link href="{% static 'css/loading_spinner.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+
+    <style type="text/css">
+        td,th {
+        text-align:center ;
+        }
+        body{background-color:#39435c}
+        #alzitoona-table{background-color:white}
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+
+
+        <div class="sk-folding-cube" id="loading-icon">
+            <div class="sk-cube1 sk-cube"></div>
+            <div class="sk-cube2 sk-cube"></div>
+            <div class="sk-cube4 sk-cube"></div>
+            <div class="sk-cube3 sk-cube"></div>
+        </div>
+
+
+        <div class="col-xs-10 col-xs-offset-1" id="table">
+
+
+
+            <div class="table-responsive" id="normal-table"
+                 style="margin-top:50px;margin-bottom:50px;background-color:white">
+
+
+                <table class="table table-hover" style="margin-top:30px">
+                    <thead>
+                    <tr>
+                        <th><span class="h4">UpVotes</span></th>
+                        <th><span class="h4">DownVotes</span></th>
+                        <th><span class="h4">Question</span></th>
+                        <th><span class="h4">Specialization</span></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for info in page.object_list %}
+
+                    <tr>
+                        <td style="background-color:#ECEBEB ;height:100px"><span class="h2 ">{{info.upvote}}</span><br/>votes
+                        </td>
+                        <td style="background-color:#ECEBEB; height:100px"><span class="h2 ">{{info.downvote}}</span>
+                            <br/>votes
+                        </td>
+                        <td><a class="h4" style="height:100px" href="{{info.question_id}}/">{{info.question_title}}</a></td>
+                        <td><span class="h4 text-info" style="height:100px">{{info.specialization}}</span></td>
+
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+
+
+                <div align="center">
+                    <ul class="pagination pagination-centered">
+
+
+                        {% if page.has_previous %}
+                        <li><a href="{{previous}}{{page.previous_page_number }}">&laquo;</a></li>
+
+                        {% endif %}
+
+                        <li class="active"><a href="?page={{ page.number }}">{{page.number}}</a></li>
+
+
+                        {% if page.has_next %}
+                        <li><a href="{{next}}{{ page.next_page_number }}">&raquo;</a></li>
+
+                        {% endif %}
+
+
+                    </ul>
+
+                </div>
+
+
+
+
+            </div>
+
+            <div align="center">
+                <a href="/home/questions/search/">
+                <i class="fa fa-arrow-circle-left fa-2x" style="color:white"></i>
+                <br>
+                <strong class="h2" style="color:white">Back</strong>
+            </a>
+            </div>
+
+
+
+        </div>
+
+
+    </div>
+</div>
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/questions_search2.js'%}"></script>
+
+
+</body>
+</html>

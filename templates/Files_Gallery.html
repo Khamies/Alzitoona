@@ -1,0 +1,99 @@
+{% load staticfiles %}
+<html>
+<head>
+    <title>
+        Alzaitoona | Library
+    </title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+
+    <style type="text/css">
+        td,th {
+        text-align:center ;
+        }
+        body{background-color:#39435c}
+        #alzitoona-table{background-color:white}
+
+    </style>
+
+</head>
+<body>
+
+
+<div class="container">
+    <div class="row">
+
+        <div class="col-xs-10 col-xs-offset-1" >
+
+             {% include 'Site_Bar.html'%}
+         </div>
+
+   <div class="col-xs-10 col-xs-offset-1" id="table">
+
+
+            <div class="table-responsive" id="normal-table"
+                 style="margin-top:50px;margin-bottom:50px;background-color:white">
+
+               <input type="hidden" id="token" value="{{csrf_token}}">
+
+                <table class="table table-hover" style="margin-top:30px">
+                    <thead>
+                    <tr>
+                        <th><span class="col-xs-4">Date</span></th>
+                        <th><span class="col-xs-8">file</span></th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in file %}
+
+                    <tr id="tr{{item.1}}">
+                        <td style="background-color:#ECEBEB ;height:100px" class="col-xs-4"><span class="h4">{{item.3.date}}</span>
+                        </td>
+
+                        <td><a style="height:100px" href="{{item.1}}/" class="col-xs-7"><strong class="h3">{{item.2}}</strong></a></td>
+
+                        <td><a style="height:100px" href="#" class="col-xs-1 delete" title="delete" id="{{item.1}}"><i class="fa fa-trash fa-lg"></i></a></td>
+
+                    </tr>
+                    {% endfor %}
+
+                    </tbody>
+
+                </table>
+
+                 <div align="center">
+                    <ul class="pagination pagination-centered">
+
+
+                        {% if page.has_previous %}
+                        <li><a href="{{previous}}{{page.previous_page_number }}">&laquo;</a></li>
+
+                        {% endif %}
+
+                        <li class="active"><a href="?page={{ page.number }}">{{page.number}}</a></li>
+
+
+                        {% if page.has_next %}
+                        <li><a href="{{next}}{{ page.next_page_number }}">&raquo;</a></li>
+
+                        {% endif %}
+
+
+                    </ul>
+
+                </div>
+
+
+
+</div>
+    </div>
+        </div>
+    </div>
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/three/delete_file.js'%}"></script>
+</body>
+</html>

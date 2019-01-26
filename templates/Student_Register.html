@@ -1,0 +1,96 @@
+{% load staticfiles %}
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Form</title>
+    <link href="{% static 'css/three.css'%}" rel="stylesheet">
+    <link href="{% static 'css/easydropdown.metro.css'%}" rel="stylesheet">
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href='http://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+
+    <style>
+        body {background-color:#39435c;}
+    </style>
+</head>
+<body>
+<div class="container">
+
+    <div class="row">
+
+
+
+        <form method="post" action="/Student_home/" id="form">
+
+            {% csrf_token %}
+
+            <div class="form-group">
+                <h1 id="response">Welcome !</h1>
+
+                <fieldset>
+                    <legend><span class="number">1</span>Basic info</legend>
+                    <label>Name:</label>
+                    {{user_form.username}}
+
+                    <label>Email:</label>
+                    {{user_form.email}}
+
+                    <label>Password:</label>
+                    {{user_form.password}}
+
+                    <br>
+
+                </fieldset>
+
+                <fieldset>
+                    <legend><span class="number">2</span>Profile info</legend>
+                </fieldset>
+                <fieldset>
+
+
+                    {{form.index}}
+                    {{form.student_specialization}}
+                    {{form.student_phone_number}}
+
+
+                    <label>Age:</label>
+                    <div align="center">
+                        {{form.user_age}}
+                    </div>
+
+                    <br>
+                    <br>
+
+                    </label>
+
+
+                    <label> Related Interest : </label>
+                    <div align="center">
+
+                        {{form.user_interest}}
+
+                    </div>
+
+
+                </fieldset>
+                <br>
+
+
+                <button type="submit" class="form-control submit" id="submit"><span class="h2">Sign Up</span></button>
+
+            </div>
+        </form>
+
+
+    </div>
+</div>
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/animations3.js'%}"></script>
+<script src="{% static 'js/jquery.easydropdown.js'%}"></script>
+
+</body>

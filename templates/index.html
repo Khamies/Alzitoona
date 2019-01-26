@@ -1,0 +1,101 @@
+{% load staticfiles %}
+
+<html>
+
+<head>
+    <title>Al Zitoona</title>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/two.css'%}" rel="stylesheet">
+    <link href="{% static 'css/one.css'%}" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link href="{% static 'css/animate.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/vegas.min.css'%}" rel="stylesheet">
+
+</head>
+
+<body id="body">
+
+
+<div id="all">
+
+    <div class="container">
+        <div class="row">
+
+
+            <div class="auto_text h1 col-lg-8" align="left" style="margin-top:50px" id="introduction">
+            </div>
+
+            <div class="col-lg-4 Login-Register" align="center">
+
+                <a class="btn btn-default btn-block general-button " id="login" href="/login/"> <span
+                        class="h1">Login</span></a>
+                <a class="btn btn-default btn-block general-button" id="register" href="register/"> <span class="h1">Register</span></a>
+
+                <div align="center" style="margin-top:80;color:white"><span class="h1">Join us</span></div>
+
+                <ul class="list-inline banner-social-buttons" style="margin-top:100px;margin-left:30px">
+                    <li>
+                        <a href="https://twitter.com" class="btn btn-default btn-lg general-button"><i
+                                class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+                    </li>
+
+                    <li>
+                        <a href="https://plus.google.com" class="btn btn-default btn-lg general-button"><i
+                                class="fa fa-google-plus fa-fw"></i> <span class="network-name">Google+</span></a>
+                    </li>
+                </ul>
+                <br>
+
+                <br>
+                <br>
+                <br>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</div>
+
+<footer>
+
+    <div align="center"><span class="h4">&copy; 2016&nbsp;<strong>ALZitoona</strong></span></div>
+</footer>
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script src="{% static 'js/custombox.min.js'%}"></script>
+<script src="{% static 'js/legacy.min.js'%}"></script>
+<script src="{% static 'js/responsiveslides.js'%}"></script>
+<script src="{% static 'js/animations2.js'%}"></script>
+<script src="{% static 'js/typed.js'%}"></script>
+<script src="{% static 'js/vegas.min.js'%}"></script>
+<script>
+
+$(document).ready(function()
+
+{
+	 $('body').vegas({
+        slides: [
+            { src: "/media/background/one.jpg" },
+            { src: "/media/background/two.jpg"  },
+            { src: "/media/background/three.jpg"  },
+            { src: "/media/background/four.jpg"  },
+            { src: "/media/background/five.jpg"  },
+
+
+        ]
+    });
+
+});
+
+
+</script>
+
+</body>
+
+</html>

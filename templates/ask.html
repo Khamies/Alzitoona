@@ -1,0 +1,112 @@
+<!-- Start Feature Section -->
+{% load staticfiles %}
+
+<head>
+
+    <title> Alzitoona | Ask </title>
+    <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+    <style>
+        body{background-color:#39435c;}
+        #main{background-color:white;}
+        #question{
+        resize: none;
+
+
+        }
+
+        #title
+        {height:70px;
+        font-size:25px
+        }
+
+    </style>
+
+    <script src='//cdn.tinymce.com/4/tinymce.min.js'></script>
+    <script>
+   tinymce.init({
+    selector: '#question',
+
+
+    <!--inline: true,-->
+     });
+
+
+
+
+
+
+    </script>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        {% include 'Site_Bar.html' %}
+
+
+        <div class="col-xs-8 col-xs-offset-2" id="main" style="margin-bottom:20px">
+
+
+            <form method="post" action="." id="question-form">
+                {% csrf_token %}
+
+
+                <div class="form-group panel">
+                    <div class="panel-heading">
+                        {{form.question_title}}
+                    </div>
+
+                    <div class="panel-body">
+
+                        {{form.question}}
+                        <br><br>
+
+                        {{form.specialization}}
+
+                    </div>
+
+                    <div class="panel-footer">
+                        <input class="from-control btn btn-info" style="height:30px;width:80px" type="submit"
+                               name="submit" value="Submit">
+
+                    </div>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js'%}"></script>
+<script src="{% static 'js/bootstrap.min.js'%}"></script>
+<script>
+    $(document).ready(function()
+    {
+    $("#question-form").submit(function (e)
+    {
+    tinymce.triggerSave();
+    value=$("#question").val();
+    if (!value){
+    e.preventDefault();
+    $("#question-form").before("<strong class='h4 text-danger col-xs-8 col-xs-offset-4'> you should ask question !</strong>");
+    }
+
+    })
+
+    });
+
+
+
+</script>
+
+</body>
+<!-- End Feature Section -->

@@ -1,0 +1,85 @@
+{% load staticfiles %}
+
+<head>
+
+    <title> Alzitoona | Library </title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/themes/jquery.filer-dragdropbox-theme.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/jquery.filer.css' %}" rel="stylesheet" type="text/css">
+    <link href="{% static 'css/separator.css'%}" rel="stylesheet">
+    <link href="{% static 'css/font-awesome.min.css'%}" rel="stylesheet">
+
+
+    <style>
+        body{background-color:#39435c;}
+        #main{background-color:white;}
+
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <div class="row">
+
+        <input type="hidden" id="token" value="{{csrf_token}}">
+
+        <div class="col-xs-8 col-xs-offset-2">
+
+            {% include 'Site_Bar.html'%}
+        </div>
+
+        <div class="col-xs-8 col-xs-offset-2" id="main" style="margin-bottom:20px;margin-top:30px">
+
+            <div class="col-xs-6 col-xs-offset-3">
+
+                <select class="form-control " id="specialization" style="margin-top:40px">
+                    <option class="h4" disabled> Select --</option>
+                    <option>Power</option>
+                    <option>Software</option>
+                    <option>Telecom</option>
+                    <option>Control</option>
+                    <option>Electronics</option>
+
+                </select>
+                <br>
+                <textarea class="form-control" id="description" placeholder="description..."></textarea>
+                <br>
+            </div>
+
+            <br><br><br><br>
+
+            <div style="margin-top:30px" align="center">
+
+                <input type="file" name="files[]" id="filer_input" multiple="multiple" class="file">
+
+            </div>
+
+            <br><br>
+
+
+            <br><br><br>
+            <hr class="separator">
+
+            <ul class="list-group">
+                <li class="list-group-item list-group-item-info h4"><strong>First:</strong> Select File Group</li>
+                <li class="list-group-item list-group-item-info h4"><strong>Second:</strong> Upload Your File</li>
+
+            </ul>
+
+
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<script src="{% static 'js/jquery-2.2.0.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<script src="{% static 'js/two/jquery.filer.min.js' %}"></script>
+<script src="{% static 'js/two/custom.js' %}"></script>
+
+
+</body>
